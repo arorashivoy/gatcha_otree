@@ -15,7 +15,7 @@ class Constants(BaseConstants):
     addition_money = 100
     cost_per_spin = 10
     rewards = ["Common", "Uncommon", "Rare", "Epic", "Legendary"]
-    weights = [i / sum([10**(-i) for i in range(5)]) for i in [2**(-i) for i in range(5)]]
+    weights = [i / sum([5**(-i) for i in range(5)]) for i in [5**(-i) for i in range(5)]]
 
 
 class Subsession(BaseSubsession):
