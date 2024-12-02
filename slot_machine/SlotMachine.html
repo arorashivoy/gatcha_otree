@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+
+{% block content %}
+    <h1>Gatcha Game</h1>
+    <p>Your current money: {{ current_money }}</p>
+    <p>Last spin result: {{ spin_result }}</p>
+    <button id="spin-button">Spin (Cost: {{ Constants.cost_per_spin }})</button>
+    <p id="status"></p>
+
+    <script>
+        const spinButton = document.getElementById('spin-button');
+        spinButton.addEventListener('click', () => {
+            liveSend('spin');
+        });
+
+        liveRecv((data) => {
+            document.getElementById('status').innerText = 
+                `You spun and won ${data.spin_result}. Current money: ${data.current_money}`;
+        });
+    </script>
+{% endblock %}

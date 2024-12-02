@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+
+{% block content %}
+    <h1>Game Results</h1>
+    <p>Total Spins: {{ total_spins }}</p>
+    <p>Final Money: {{ final_money }}</p>
+
+    <button id="buy-money-btn" onclick="buyMoreMoney()">Buy More Money</button>
+    <button id="exit-game-btn" onclick="exitGame()">Exit Game</button>
+
+    <script>
+        function buyMoreMoney() {
+            liveSend({ buy_more_money: true });
+        }
+
+        function exitGame() {
+            liveSend({ exit_game: true });
+        }
+    </script>
+{% endblock %}

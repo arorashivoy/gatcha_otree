@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+
+{% block content %}
+    <h1>Welcome to the Gacha Game Experiment!</h1>
+    
+    <p>In this experiment, you will be participating in a Gacha-style game, similar to those found in mobile games like *Honkai Star Rail* (HSR). Gacha games involve spending in-game currency to receive random rewards, which could be valuable items or characters.</p>
+    
+    <p>Your starting balance for the experiment is <strong>{{ initial_money }} in-game currency</strong>. Each time you want to make a pull in the Gacha game, it will cost you <strong>{{ cost_per_spin }} in-game currency</strong>. Your goal is to manage your currency wisely and make the best pulls to maximize your rewards!</p>
+
+    <p>Once you have read this information, click the button below to start the game and make your first pull!</p>
+
+    <button id="start-game-btn" onclick="startGame()">Start Game</button>
+
+    <p><em>Note: You will not lose real money or resources in this experiment, it's all simulated using in-game currency!</em></p>
+
+    <script>
+        function startGame() {
+            liveSend({start_game: true});
+        }
+    </script>
+{% endblock %}
