@@ -4,9 +4,25 @@
     <h1>Gatcha Game</h1>
     <p>Your current money: {{ current_money }}</p>
     <p>Last spin result: {{ spin_result }}</p>
+
+    <div>
+        {% if spin_result == "Common" %}
+            <img src="\static\image\common.png" alt="Common Reward">
+        {% elif spin_result == "Uncommon" %}
+            <img src="\static\image\uncommon.png" alt="Uncommon Reward">
+        {% elif spin_result == "Rare" %}
+            <img src="\static\image\rare.png" alt="Rare Reward">
+        {% elif spin_result == "Epic" %}
+            <img src="\static\image\epic.png" alt="Epic Reward">
+        {% elif spin_result == "Legendary" %}
+            <img src="\static\image\legendary.png" alt="Legendary Reward">
+        {% else %}
+            <p>No reward yet!</p>
+        {% endif %}
+    </div>
+
     <button id="spin-button">Spin (Cost: {{ Constants.cost_per_spin }})</button>
     <p id="status"></p>
-
     <script>
         const spinButton = document.getElementById('spin-button');
         spinButton.addEventListener('click', () => {
@@ -16,6 +32,9 @@
         liveRecv((data) => {
             document.getElementById('status').innerText = 
                 `You spun and won ${data.spin_result}. Current money: ${data.current_money}`;
+            if (data.spin_result) {
+                document.querySelector("img").src = `/static/image/${data.spin_result.toLowerCase()}.png`;
+            }
         });
     </script>
 {% endblock %}
