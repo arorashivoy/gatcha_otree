@@ -1,7 +1,7 @@
 {% extends "global/Page.html" %}
 
 {% block content %}
-    <h1>Gatcha Game</h1>
+    <h1>Gacha Game</h1>
     <p>Your current money: {{ current_money }}</p>
     <p>Last spin result: {{ spin_result }}</p>
 
@@ -21,19 +21,33 @@
         {% endif %}
     </div>
 
-    <button id="spin-button">Spin (Cost: {{ Constants.cost_per_spin }})</button>
+    <div>
+        <button id="spin-button">Spin (Cost: {{ Constants.cost_per_spin }})</button>
+        <button id="exit-button">Exit Game</button>
+    </div>
     <p id="status"></p>
+
     <script>
         const spinButton = document.getElementById('spin-button');
+        const exitButton = document.getElementById('exit-button');
+
         spinButton.addEventListener('click', () => {
-            liveSend('spin');
+            liveSend({ action: 'spin' });
+        });
+
+        exitButton.addEventListener('click', () => {
+            liveSend({ action: 'exit' });
         });
 
         liveRecv((data) => {
-            document.getElementById('status').innerText = 
-                `You spun and won ${data.spin_result}. Current money: ${data.current_money}`;
-            if (data.spin_result) {
-                document.querySelector("img").src = `/static/image/${data.spin_result.toLowerCase()}.png`;
+            if (data.action === 'spin') {
+                document.getElementById('status').innerText = 
+                    `You spun and won ${data.spin_result}. Current money: ${data.current_money}`;
+                if (data.spin_result) {
+                    document.querySelector("img").src = `/static/image/${data.spin_result.toLowerCase()}.png`;
+                }
+            } else if (data.action === 'exit') {
+                window.location.href = "/Exit";
             }
         });
     </script>
