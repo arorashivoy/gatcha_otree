@@ -1,6 +1,6 @@
 # Gacha Game Experiment
 
-This folder contains a Behavioural Economics experiment designed to test Loss Aversion and the Sunk Costs effect in Gacha games. The experiment simulates a Gacha-style game where participants use in-game currency to receive random rewards.
+This Repository contains the code for Behavioural Economics experiment designed to test Loss Aversion and the Sunk Costs effect in Gacha games. The experiment simulates a Gacha-style game where participants use in-game currency to receive random rewards.
 
 ## Overview
 
