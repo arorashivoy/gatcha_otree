@@ -1,5 +1,7 @@
 # Gacha Game Experiment
 
+Please check out the detailed project report and the presentation in the links below.
+
 This Repository contains the code for Behavioural Economics experiment designed to test Loss Aversion and the Sunk Costs effect in Gacha games. The experiment simulates a Gacha-style game where participants use in-game currency to receive random rewards.
 - [Presentation](https://drive.google.com/file/d/19r7tAt6S73aLs11k1PlxLn_f3NVJBeXT/view?usp=sharing)
 - [Detailed Report](https://drive.google.com/file/d/1XMUSN9nVYqjYyuuwgIJxwmWtUdqjuKVw/view?usp=sharing)
@@ -32,5 +34,3 @@ requirements.txt
 4. **Access the Experiment**: Open your web browser and navigate to `http://localhost:8000` to access the experiment.
 
 5. **Admin Interface**: To access the admin interface, navigate to `http://localhost:8000/admin` and log in with the username `admin` and the password you set in the environment variable.
-
-
