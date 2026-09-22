@@ -62,11 +62,11 @@ requirements.txt
 
 ## Report and presentation
 
-- [Detailed report](https://drive.google.com/file/d/1XMUSN9nVYqjYyuuwgIJxwmWtUdqjuKVw/view?usp=sharing)
-- [Presentation](https://drive.google.com/file/d/19r7tAt6S73aLs11k1PlxLn_f3NVJBeXT/view?usp=sharing)
+- [Project report](docs/project-report.pdf)
+- [Presentation](docs/presentation.pdf)
 
-Both are hosted on Google Drive and owned by a co-author, so a reader without
-access will hit a sign-in wall.
+Both are committed here rather than linked from Google Drive, so they open without
+a sign-in.
 
 ## Credits
 
