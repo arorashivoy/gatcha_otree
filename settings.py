@@ -41,4 +41,4 @@ ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 
 DEMO_PAGE_INTRO_HTML = """ """
 
-SECRET_KEY = '8643931743238'
+SECRET_KEY = environ.get('OTREE_SECRET_KEY', 'dev-insecure-do-not-deploy')
